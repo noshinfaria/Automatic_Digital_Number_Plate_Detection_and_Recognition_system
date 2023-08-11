@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="container">
+         <br>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <input type="file" class="form-control" name="image_name" required>
+
+                <input type="submit" value="Upload" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+        </div>
+
+    {% if upload %}
+    <div class="container" id="img_adjust">
+
+
+        <table>
+            <tr>
+                <td><div class="container">
+                    <h5>Uploaded Image</h5>
+                    <img class="rounded float-left img-fluid" src="/static/upload/{{filename}}" width="80%"> &nbsp;&nbsp;
+               </div>
+                </td>
+                <br>
+                <td>
+
+                    <h5>Detected Plate Image</h5>
+                    <br>
+                    <img class="rounded float-right img-fluid" src="/static/plate_img/{{filename}}" width="90%">
+
+                    <br><br><br>
+
+                    <h5>Character Localize in Number Plate</h5>
+                    <br>
+                    <img class="rounded float-right img-fluid" src="/static/loc_char_img/{{filename}}" width="90%">
+
+                    <br><br>
+
+                    <h5>Character Recognition</h5>
+
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button" class="btn btn-success">{{prediction}}</button>
+<!--                    <h6>{{prediction}}</h6>-->
+
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    {%endif %}
+{% endblock  %}

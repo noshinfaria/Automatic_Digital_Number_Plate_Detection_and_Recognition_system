@@ -1,0 +1,136 @@
+<!--Right now, I am tired for you. So, I will deal with you later-->
+
+
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+
+
+
+<!--        <img src="{{ url_for('video') }}" width="50%" />-->
+    <iframe src="{{ url_for('video') }}" width="645" height="485"></iframe>
+    <br><br>
+<div class = "vertical"></div>
+
+</div>
+<!--  Table------------------------------  -->
+<!--    .table {-->
+<!--            width: 38%;-->
+<!--            position:absolute;-->
+<!--            left: 58%;-->
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+<!--}-->
+
+
+<!--table-bordered table-dark    -->
+<div class="id" width="245">
+  <table class="table table-bordered table-dark" id="example">
+  <thead>
+    <tr>
+<!--      <th scope="col">#</th>-->
+      <th scope="col">Plate Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+    <tbody id="scandata">
+  {% for d in data %}
+    <tr>
+<!--      <th scope="row">1</th>-->
+      <td>{{d.plate_number}}</td>
+      <td>{{d.date}}</td>
+      <td>@{{d.time}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<!--button-------------------------    -->
+
+<!--    <div class="info">-->
+
+<!--				<a href="{{ url_for('layout') }}" class="btn btn-md text-center">STOP</a>-->
+<!--			</div>-->
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--			<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>-->
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+   $('#example').DataTable( {
+<!--        ajax: {-->
+<!--        url: '/loadData',-->
+<!--        dataSrc: 'response'-->
+<!--        },-->
+<!--        columns: [-->
+<!--            {data : "plate_number"},-->
+<!--            {data : "date"},-->
+<!--            {data : "time"}-->
+<!--        ]-->
+
+
+   } );
+   } );
+
+
+
+</script>
+<!--<script type="text/javascript">-->
+<!--    $(document).ready(function() {-->
+<!--        let lastcnt = 0;-->
+<!--        let cnt;-->
+<!--        chkNewScan();-->
+
+<!--        function chkNewScan() {-->
+<!--            countTodayScan();-->
+<!--            setTimeout(chkNewScan, 1000);-->
+<!--        }-->
+
+
+
+<!--        function reloadTable() {-->
+<!--            $.ajax({-->
+<!--                url: '/loadData',-->
+<!--                type: 'GET',-->
+<!--                dataType: 'json',-->
+<!--                success: function(response){-->
+<!--                    var tr = $("#scandata");-->
+<!--                    tr.empty();-->
+
+<!--                    $.each(response, function(index, item) {-->
+<!--                        if (item.length > 0) {-->
+<!--                            for (let i = 0; i < item.length; i++) {-->
+<!--                                tr.append('<tr>'+-->
+<!--                                                '<td>'+item[i][1]+'</td>'+-->
+<!--                                                '<td>'+item[i][2]+'</td>'+-->
+<!--                                                '<td>'+item[i][3]+'</td>'+-->
+<!--                                                '<td>'+item[i][4]+'</td>'+-->
+<!--                                           '</tr>');-->
+<!--                            }-->
+<!--                        }-->
+<!--                    });-->
+<!--                },-->
+<!--                error: function(result){-->
+<!--                    console.log('no result!')-->
+<!--                }-->
+<!--            });-->
+<!--        }-->
+<!--    });-->
+<!--</script>-->
+{% endblock  %}
+

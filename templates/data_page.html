@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container">
+    <br><br>
+    <div class="id">
+  <table class="table table-bordered table-dark" id="example">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Plate Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+    <tbody id="scandata">
+  {% for d in data %}
+    <tr>
+      <td>{{d.id}}</td>
+      <td>{{d.plate_number}}</td>
+      <td>{{d.date}}</td>
+      <td>{{d.time}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--			<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>-->
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" />
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+            <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+   $('#example').DataTable( {
+
+
+
+   } );
+   } );
+
+
+
+</script>
+{% endblock  %}

@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+
+
+
+<!--        <img src="{{ url_for('video') }}" width="50%" />-->
+    <iframe src="{{ url_for('video') }}" width="645" height="485"></iframe>
+            <br><br>
+<div class = "vertical"></div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+
+        <!--button------------------------- class="btn btn-md text-center"   -->
+
+    <div id="button2">
+
+				<a type="button" class="btn btn-danger btn-lg btn--block" href="{{ url_for('layout') }}" >Stop Camera</a>
+                <br><br>
+                <a id="individual-button" class="btn btn-danger btn-lg btn--block" href="{{ url_for('DataPage') }}" >Data</a>
+                <br><br>
+                <a id="individual-button" class="btn btn-danger btn-lg btn--block" href="{{ url_for('Img') }}" >Image</a>
+			</div>
+    </div>
+</div>
+
+
+{% endblock  %}

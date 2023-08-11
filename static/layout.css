@@ -1,0 +1,28 @@
+body{
+	margin:10;
+	padding:0;
+	background:#fff;
+	font-family: 'Raleway',sans-serif;
+
+    height: 100vh;
+	width: 100%;
+	background-image: url('/static/plate_img/hi.jpg');
+	/*background-image:url({{url_for('static', filename='upload/804.jpg')}});*/
+	background-position: top;
+	background-size:cover;
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+
+}
+
+
+.banner{
+	height: 100vh;
+	width: 100%;
+	background-image: url('/static/upload/804.jpg');
+	/*background-image:url({{url_for('static', filename='upload/804.jpg')}});*/
+	background-position: top;
+	background-size:cover;
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+}

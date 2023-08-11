@@ -1,0 +1,12 @@
+names:
+- NumberPlate
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: number-plate-rashedul-islam
+  url: https://universe.roboflow.com/number-plate-dataset/number-plate-rashedul-islam/dataset/1
+  version: 1
+  workspace: number-plate-dataset
+test: ../test/images
+train: number-plate-1-1/train/images
+val: number-plate-1-1/valid/images

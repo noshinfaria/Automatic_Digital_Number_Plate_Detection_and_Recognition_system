@@ -1,0 +1,13 @@
+torch
+numpy
+pillow
+pandas
+seaborn
+flask
+setuptools-67.3.2
+opencv-contrib-python
+torchvision
+tqdm
+pyyaml
+scipy
+flask-sqlalchemy
